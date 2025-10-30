@@ -14,8 +14,9 @@ async def toast_bread():
 # One way of calling async functions
 async def main():
     start = time.time()
-    coffee_task = asyncio.create_task(brew_coffee())
     bread_task = asyncio.create_task(toast_bread())
+    coffee_task = asyncio.create_task(brew_coffee())
+    print("Waiting for coffee to brew...")
     coffee = await coffee_task
     print(f"Sample Time taken")
     end = time.time()
@@ -30,6 +31,7 @@ async def main():
 async def main2():
     start = time.time()
     await asyncio.gather(brew_coffee(), toast_bread())
+    print(f"Sample Time taken")
     end = time.time()
     print(f"Time taken: {end - start} seconds")
 
