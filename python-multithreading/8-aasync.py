@@ -1,5 +1,6 @@
 import time
 import asyncio
+
 async def brew_coffee():
     print("Brewing coffee...")
     await asyncio.sleep(3)
@@ -8,9 +9,10 @@ async def brew_coffee():
 
 async def toast_bread():
     print("Toasting bread...")
-    await asyncio.sleep(2)
+    await asyncio.sleep(3)
     print("Bread toasted")
     return "Bread"
+
 # One way of calling async functions
 async def main():
     start = time.time()
@@ -30,11 +32,12 @@ async def main():
 # Another way of calling async functions
 async def main2():
     start = time.time()
-    await asyncio.gather(brew_coffee(), toast_bread())
+    asyncio.gather(brew_coffee(), toast_bread())
     print(f"Sample Time taken")
     end = time.time()
     print(f"Time taken: {end - start} seconds")
+    await asyncio.sleep(4)  # Wait enough time for tasks to complete
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    # asyncio.run(main())
     asyncio.run(main2())
