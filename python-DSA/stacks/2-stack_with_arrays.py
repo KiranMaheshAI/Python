@@ -1,15 +1,8 @@
 """
-Stack with arrays:
-
-A stack is a linear data structure that follows the Last In First Out (LIFO) principle.
-It is a collection of elements that are inserted and removed from the same end, called the top.
-The stack is a fundamental data structure in computer science and is used in many algorithms and applications.
-
-The stack is a linear data structure that follows the Last In First Out (LIFO) principle.
-It is a collection of elements that are inserted and removed from the same end, called the top.
-The stack is a fundamental data structure in computer science and is used in many algorithms and applications.
+Stack With Arrays:
 
 """
+
 
 class StackUsingArrays:
     def __init__(self):
