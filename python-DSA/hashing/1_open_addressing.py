@@ -1,5 +1,6 @@
 # Hash Map Implementations using Open Addressing
-# Open Addressing is a kind of hashing where if the value is present in the index, we check whether next index is empty, if it is not we check next.
+# Open Addressing is a kind of hashing where if the value is present in the index, 
+# we check whether next index is empty, if it is not we check next.
 
 class Hashmaps:
     def __init__(self, capacity):
