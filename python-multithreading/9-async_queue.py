@@ -1,15 +1,17 @@
-# asyncio.Queue() in Python provides an asynchronous, thread-safe, and first-in, first-out (FIFO) queue specifically designed for use within asyncio applications. It enables synchronized communication and data exchange between different coroutines. 
-# Key characteristics and usage: 
+asyncio.Queue() in Python provides an asynchronous, thread-safe, and first-in, first-out (FIFO) queue 
+specifically designed for use within asyncio applications. It enables synchronized communication and data exchange 
+between different coroutines. 
 
-# • Asynchronous Operations: The put() and get() methods of asyncio.Queue are awaitable. This means a coroutine attempting to get() an item from an empty queue will pause its execution until an item becomes available, without blocking the entire event loop. Similarly, a put() operation on a full queue (if a maxsize was specified) will also await until space becomes available. 
-# • Synchronization Primitive: It acts as a crucial synchronization primitive, allowing producer coroutines to add items to the queue and consumer coroutines to retrieve them in a coordinated manner. 
-# • maxsize Parameter: When creating an asyncio.Queue, an optional maxsize argument can be provided. This limits the number of items the queue can hold, preventing unbounded memory consumption. If maxsize is 0 (the default), the queue size is unlimited. 
-# • Methods: 
-# 	• await put(item): Adds an item to the queue. If the queue is full (and maxsize is set), this operation will await until space is available. 
-# 	• await get(): Removes and returns an item from the queue. If the queue is empty, this operation will await until an item is available. 
-# 	• qsize(): Returns the current number of items in the queue. 
-# 	• empty(): Returns True if the queue is empty, False otherwise. 
-# 	• full(): Returns True if the queue is full (based on maxsize), False otherwise. 
+Key characteristics and usage: 
+• Asynchronous Operations: The put() and get() methods of asyncio.Queue are awaitable. This means a coroutine attempting to get() an item from an empty queue will pause its execution until an item becomes available, without blocking the entire event loop. Similarly, a put() operation on a full queue (if a maxsize was specified) will also await until space becomes available. 
+• Synchronization Primitive: It acts as a crucial synchronization primitive, allowing producer coroutines to add items to the queue and consumer coroutines to retrieve them in a coordinated manner. 
+• maxsize Parameter: When creating an asyncio.Queue, an optional maxsize argument can be provided. This limits the number of items the queue can hold, preventing unbounded memory consumption. If maxsize is 0 (the default), the queue size is unlimited. 
+• Methods: 
+	• await put(item): Adds an item to the queue. If the queue is full (and maxsize is set), this operation will await until space is available. 
+	• await get(): Removes and returns an item from the queue. If the queue is empty, this operation will await until an item is available. 
+	• qsize(): Returns the current number of items in the queue. 
+	• empty(): Returns True if the queue is empty, False otherwise. 
+	• full(): Returns True if the queue is full (based on maxsize), False otherwise. 
 
 import asyncio
 
