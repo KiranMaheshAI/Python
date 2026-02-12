@@ -9,7 +9,7 @@ async def brew_coffee():
 
 async def toast_bread():
     print("Toasting bread...")
-    await asyncio.sleep(10)
+    await asyncio.sleep(5)
     print("Bread toasted")
     return "Bread"
 
@@ -42,14 +42,16 @@ async def main2():
 
 async def main3():
     start = time.time()
-    coffee = await brew_coffee()
-    toast = await toast_bread()
-    asyncio.gather(coffee, toast)
+    coffee = brew_coffee()
+    toast = toast_bread()
+    print("===========================")
+    print(f"{type(coffee)} and {type(toast)}")
+    await asyncio.gather(coffee, toast)
     print(f"Sample Time taken")
     end = time.time()
     print(f"Time taken: {end - start} seconds")
     await asyncio.sleep(4)  # Wait enough time for tasks to complete
-    await asyncio.sleep(10)
+    await asyncio.sleep(100)
 
 if __name__ == "__main__":
     # asyncio.run(main())
